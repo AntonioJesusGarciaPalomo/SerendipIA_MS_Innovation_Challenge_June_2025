@@ -63,7 +63,7 @@ module webApp './modules/web-app.bicep' = {
     tags: tags
     appServicePlanId: appServicePlan.outputs.id
     runtimeName: 'python'
-    runtimeVersion: '3.11'
+    runtimeVersion: '3.12'
     appSettings: {
       AZURE_STORAGE_CONNECTION_STRING: storage.outputs.connectionString
       AZURE_STORAGE_CONTAINER_NAME: storage.outputs.containerName
