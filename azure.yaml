@@ -1,0 +1,24 @@
+name: rag-document-upload
+metadata:
+  template: rag-document-upload@0.1.0
+services:
+  backend:
+    project: ./backend
+    host: appservice
+    language: python
+    hooks:
+      prepackage:
+        windows:
+          shell: pwsh
+          run: |
+            cd ../frontend
+            npm install
+            npm run build
+            xcopy /E /I /Y dist ..\backend\src\static
+        posix:
+          shell: sh
+          run: |
+            cd ../frontend
+            npm install
+            npm run build
+            cp -r dist ../backend/src/static
