@@ -1,24 +1,27 @@
 name: rag-document-upload
 metadata:
   template: rag-document-upload@0.1.0
+infra:
+  provider: bicep
+  path: infrastructure
 services:
   backend:
     project: ./backend
     host: appservice
     language: python
-    hooks:
-      prepackage:
-        windows:
-          shell: pwsh
-          run: |
-            cd ../frontend
-            npm install
-            npm run build
-            xcopy /E /I /Y dist ..\backend\src\static
-        posix:
-          shell: sh
-          run: |
-            cd ../frontend
-            npm install
-            npm run build
-            cp -r dist ../backend/src/static
+    # hooks:
+    #   prepackage:
+    #     windows:
+    #       shell: powershell
+    #       run: |
+    #         cd ../frontend
+    #         npm install
+    #         npm run build
+    #         xcopy /E /I /Y dist ..\backend\src\static
+    #     posix:
+    #       shell: sh
+    #       run: |
+    #         cd ../frontend
+    #         npm install
+    #         npm run build
+    #         cp -r dist ../backend/src/static

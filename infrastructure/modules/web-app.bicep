@@ -14,7 +14,7 @@ param appSettings object = {}
 resource webApp 'Microsoft.Web/sites@2022-09-01' = {
   name: name
   location: location
-  tags: tags
+  tags: union(tags, { 'azd-service-name': 'backend' })
   kind: 'app,linux'
   properties: {
     serverFarmId: appServicePlanId

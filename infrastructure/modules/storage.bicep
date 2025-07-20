@@ -100,7 +100,7 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   properties: {
     roleDefinitionId: storageBlobDataContributorRole
     principalId: principalId
-    principalType: 'ServicePrincipal'
+    principalType: 'User'
   }
 }
 

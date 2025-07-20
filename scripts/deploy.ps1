@@ -3,7 +3,8 @@ Write-Host "🚀 Starting deployment process..." -ForegroundColor Green
 # Check if azd is installed
 try {
     azd version | Out-Null
-} catch {
+}
+catch {
     Write-Host "❌ Azure Developer CLI (azd) is not installed." -ForegroundColor Red
     Write-Host "Please install it from: https://aka.ms/install-azd.ps1" -ForegroundColor Yellow
     exit 1
@@ -12,7 +13,8 @@ try {
 # Check if user is logged in to Azure
 try {
     az account show | Out-Null
-} catch {
+}
+catch {
     Write-Host "🔐 Logging in to Azure..." -ForegroundColor Yellow
     az login
 }
