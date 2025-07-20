@@ -1,0 +1,6 @@
+{
+    "resourcesResourceGroups": "rg-",
+    "storageStorageAccounts": "st",
+    "webServerFarms": "plan-",
+    "webSitesAppService": "app-"
+}
