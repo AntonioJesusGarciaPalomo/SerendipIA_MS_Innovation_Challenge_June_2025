@@ -1,10 +1,27 @@
+# FastAPI y servidor
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
+gunicorn==21.2.0
 python-multipart==0.0.6
+
+# Azure
 azure-storage-blob==12.19.0
 azure-identity==1.15.0
+
+# Semantic Kernel para RAG
+semantic-kernel==0.9.0b1
+
+# Utilidades
 python-dotenv==1.0.0
 pydantic==2.5.3
 pydantic-settings==2.1.0
 aiofiles==23.2.1
-semantic-kernel==0.9.0b1
+
+# Para futuro procesamiento de documentos
+PyPDF2==3.0.1
+python-docx==0.8.11
+openpyxl==3.1.2
+
+# Para embedding y vector stores (preparación para RAG completo)
+numpy==1.26.2
+chromadb==0.4.18
